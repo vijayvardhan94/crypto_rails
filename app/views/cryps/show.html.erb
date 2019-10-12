@@ -1,0 +1,27 @@
+<div class = "panel panel-default">
+  <div class = "panel-heading">
+    <h3 class = "panel-title">Show Cryptos</h3>
+  </div>
+  <div class = "panel-body">
+
+
+<h2><%= @cryp.symbol %></h2>
+
+
+
+
+<p>
+  <strong>Cost per:</strong>
+  <%= @cryp.cost_per %>
+</p>
+
+<p>
+  <strong>Amount owned:</strong>
+  <%= @cryp.amount_owned %>
+</p>
+<div class = "panel-footer">
+    <%= link_to 'Edit', edit_cryp_path(@cryp) %> |
+    <%= link_to 'Destroy', cryp_path(@cryp), method: :delete, data: { confirm: 'Are you sure?' } %> |
+    <%= link_to 'Back', cryps_path %>
+</div>
+</div>

@@ -1,0 +1,56 @@
+
+<h1>Crypto Currencies</h1>
+<br />
+
+
+<table class = "table table-striped table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Current Price </th>
+      <th> Total Current Value </th>
+      <th> Total Paid </th>
+      <th>Profit/Loss</th>
+      <th>Symbol</th>
+      <th>Cost per</th>
+      <th>Amount owned</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cryps.each do |cryp| %>
+      <% if cryp.user_id == current_user.id %>
+        <% if cryp.symbol %>
+          <% cryp.symbol = cryp.symbol.upcase %>
+        <% end %>
+          <tr>
+            <% for x in @lookup_cryps %>
+                <% if cryp.symbol == x['symbol'] %>
+                  <td><%= link_to x['name'], cryp %></td>
+                  <td>$<%= (x["price_usd"]) %></td>
+                  <td>$<%= x["price_usd"].to_d * cryp.amount_owned %></td>
+                  <td>$<%= cryp.cost_per * cryp.amount_owned %>
+                  <td>$<%= (x["price_usd"].to_d * cryp.amount_owned) - (cryp.cost_per * cryp.amount_owned) %></td>
+
+
+
+
+                <% end %>
+
+            <% end %>
+
+            <td><%= cryp.symbol %></td>
+
+            <td>$<%= cryp.cost_per %></td>
+            <td><%= cryp.amount_owned %></td>
+
+
+
+          </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<%= link_to 'New Crypto Currency', new_cryp_path, class: "btn btn-default" %>
