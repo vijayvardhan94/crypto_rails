@@ -1,5 +1,5 @@
 
-#Rails application that fetches crypto currency data from Coin Market Cap API
+Rails application that fetches crypto currency data from Coin Market Cap API
 =======
 # README
 
