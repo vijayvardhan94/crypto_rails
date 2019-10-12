@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # CoinMarketCap
 Rails application that fetches crypto currency data from Coin Market CaP API
 =======
@@ -26,4 +26,4 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
->>>>>>> initial commit and pre-heroku
+
